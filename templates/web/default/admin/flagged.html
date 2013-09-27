@@ -61,19 +61,17 @@
 
 <h2>[% loc( 'Abuse table' ) %]</h2>
 <p class="fms-admin-info">
-  [% loc("Flagged users are not restricted in any way. This is just a list of users that have been marked for attention.") %]
+  [% loc("Emails from abuse list cannot be used") %]
 </p>
 
 [% IF abuser_emails.size %]
 <table cellspacing="0" cellpadding="2" border="1">
     <tr>
         <th>[% loc('Email') %]</th>
-        <th>&nbsp;</th>
     </tr>
     [%- FOREACH abuser_email IN abuser_emails %]
-    <tr [% IF user.flagged == 2 %]class="is-deleted"[% END %]>
-        <td>[% abuser_email.email | html %]</td>
-        </td>
+    <tr>
+        <td>[% abuser_email.email | html %]</td></td>
     </tr>
     [%- END %]
 </table>
