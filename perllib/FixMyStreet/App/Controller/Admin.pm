@@ -1045,7 +1045,7 @@ sub flagged : Path('flagged') : Args(0) {
             push @{$c->stash->{users}}, { email => $email->email, flagged => 2 };
         }
     }
-    
+
     $c->stash->{abuser_emails} = [ @abuser_emails ];
 
     return 1;
